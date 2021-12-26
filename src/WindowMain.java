@@ -1,14 +1,8 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.*;  
 import javax.swing.*;
 
-public class Window extends JFrame{
-	
-	static Dimension getLabelSize(JLabel l) {
-		return l.getPreferredSize();
-	}
-	// hahah
+public class WindowMain extends JFrame{
 	
 	public static DefaultListModel demoTitles = new DefaultListModel();
 	public static DefaultListModel demoUsername = new DefaultListModel();
@@ -17,6 +11,7 @@ public class Window extends JFrame{
 	static public JFrame mainWindow = new JFrame("A window");
 	
 	static void DrawMainWindow() {
+		
 		demoTitles = (DefaultListModel) List.getListTitles();
 		demoUsername = (DefaultListModel) List.getListUsername();
 		demoPassword = (DefaultListModel) List.getListPassword();
@@ -36,11 +31,11 @@ public class Window extends JFrame{
 	    
 	    
 		
-		labelItems.setBounds(208, 20, getLabelSize(labelItems).width, getLabelSize(labelItems).height);
-		labelTitles.setBounds(20, 50, getLabelSize(labelTitles).width, getLabelSize(labelTitles).height);
-		labelUsername.setBounds(140, 50, getLabelSize(labelUsername).width, getLabelSize(labelUsername).height);
-		labelPassword.setBounds(260, 50, getLabelSize(labelPassword).width, getLabelSize(labelPassword).height);
-		labelUrl.setBounds(380, 50, getLabelSize(labelUrl).width, getLabelSize(labelUrl).height);
+		labelItems.setBounds(208, 20, labelItems.getPreferredSize().width, labelItems.getPreferredSize().height);
+		labelTitles.setBounds(20, 50, labelTitles.getPreferredSize().width, labelTitles.getPreferredSize().height);
+		labelUsername.setBounds(140, 50, labelUsername.getPreferredSize().width, labelUsername.getPreferredSize().height);
+		labelPassword.setBounds(260, 50, labelPassword.getPreferredSize().width, labelPassword.getPreferredSize().height);
+		labelUrl.setBounds(380, 50, labelUrl.getPreferredSize().width, labelUrl.getPreferredSize().height);
 		
 		
 		
@@ -52,7 +47,7 @@ public class Window extends JFrame{
 		
 		buttonAdd.addActionListener(new ActionListener(){  
 			 public void actionPerformed(ActionEvent e){  
-						 DrawAddWindow();
+						 WindowAdd.DrawAddWindow();
 					     mainWindow.dispose();
 			         }  
 			     });  
@@ -79,27 +74,5 @@ public class Window extends JFrame{
 	    mainWindow.setVisible(true);
 	}
 	
-	static void DrawAddWindow() {
-		JFrame windowAdd = new JFrame("AddPass");
-		JPanel panel = new JPanel();
-		JLabel labelUrl = new  JLabel("URL:");
-		JTextField textfieldUrl = new JTextField();
-		
-		labelUrl.setBounds(10, 10, getLabelSize(labelUrl).width, getLabelSize(labelUrl).height);
-		
-		textfieldUrl.setBounds(10, 25, windowAdd.getPreferredSize().width, 20);
-		
-		panel.add(labelUrl);
-		panel.add(textfieldUrl);
-		
-		windowAdd.add(panel);
-		windowAdd.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		windowAdd.setPreferredSize(new Dimension(600, 400));
-		windowAdd.pack();
-		windowAdd.setLocationRelativeTo(null);
-		
-		windowAdd.setVisible(true);
-		
-	}
-
+	
 }
