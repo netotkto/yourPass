@@ -8,6 +8,7 @@ public class Window extends JFrame{
 	static Dimension getLabelSize(JLabel l) {
 		return l.getPreferredSize();
 	}
+	// hahah
 	
 	public static DefaultListModel demoTitles = new DefaultListModel();
 	public static DefaultListModel demoUsername = new DefaultListModel();
