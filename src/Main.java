@@ -1,8 +1,8 @@
 
 public class Main {
 	public static void main(String[] args) {
-//		WindowMain.drawMainWindow();
-		WindowMasterKey.drawMasterKeyWindow();
+		WindowMain.drawMainWindow();
+//		WindowMasterKey.drawMasterKeyWindow();
 	}
 }
 

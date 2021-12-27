@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class WindowAdd extends JFrame {
+public class WindowAdd {
 	static void drawAddWindow() {
 		JFrame windowAdd = new JFrame("AddPass");
 		JPanel panel = new JPanel();
